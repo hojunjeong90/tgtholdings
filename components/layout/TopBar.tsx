@@ -1,24 +1,22 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavLink } from './NavLink';
 import { MobileMenu } from './MobileMenu';
 import { SearchModal } from './SearchModal';
-import { ThemeToggle } from './ThemeToggle';
 import { useState } from 'react';
-import { navItems } from '@/lib/constants/navigation';
+
+const navItems = [
+  { href: '/', label: '홈' },
+  { href: '/indicators', label: '지표' },
+  { href: '/tools', label: '도구' },
+  { href: '/feed', label: '피드' },
+];
 
 export function TopBar() {
   const [searchOpen, setSearchOpen] = useState(false);
-  const pathname = usePathname();
-
-  // 랜딩페이지에서는 TopBar를 숨김
-  if (pathname === '/') {
-    return null;
-  }
 
   return (
     <>
@@ -56,9 +54,6 @@ export function TopBar() {
               /
             </kbd>
           </Button>
-
-          {/* Theme Toggle */}
-          <ThemeToggle />
 
           {/* Mobile Search Button */}
           <Button
