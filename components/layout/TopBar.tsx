@@ -6,12 +6,14 @@ import { Button } from '@/components/ui/button';
 import { NavLink } from './NavLink';
 import { MobileMenu } from './MobileMenu';
 import { SearchModal } from './SearchModal';
+import { ThemeToggle } from './ThemeToggle';
 import { useState } from 'react';
 
 const navItems = [
   { href: '/', label: '홈' },
   { href: '/indicators', label: '지표' },
   { href: '/tools', label: '도구' },
+  { href: '/components', label: 'UI' },
   { href: '/feed', label: '피드' },
 ];
 
@@ -54,6 +56,9 @@ export function TopBar() {
               /
             </kbd>
           </Button>
+
+          {/* Theme Toggle */}
+          <ThemeToggle />
 
           {/* Mobile Search Button */}
           <Button

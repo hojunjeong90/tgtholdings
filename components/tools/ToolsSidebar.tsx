@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { DollarSign, Menu, X } from 'lucide-react';
+import { DollarSign, Menu, X, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -12,6 +12,11 @@ const menuItems = [
     href: '/tools/exchange-rate',
     label: '실시간 환율',
     icon: DollarSign,
+  },
+  {
+    href: '/tools/asset',
+    label: '종목조회',
+    icon: Search,
   },
 ];
 

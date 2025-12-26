@@ -3,11 +3,16 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart3, List, Menu, X } from 'lucide-react';
+import { BarChart3, List, Menu, X, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 const menuItems = [
+  {
+    href: '/indicators/wealth-scenario',
+    label: '부의 시나리오',
+    icon: TrendingUp,
+  },
   {
     href: '/indicators/monetary',
     label: '통화 지표 비교',

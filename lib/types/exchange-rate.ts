@@ -77,3 +77,38 @@ export const ORDERED_CURRENCIES: CurrencyCode[] = [
   'SGD',
   'THB',
 ];
+
+// 트렌드 방향
+export type TrendDirection = 'up' | 'down' | 'neutral';
+
+// 트렌드 강도
+export type TrendStrength = 'strong' | 'moderate' | 'weak';
+
+// 환율 트렌드 정보
+export interface RateTrend {
+  current: number;
+  avg1w: number; // 1주 평균
+  avg2w: number; // 2주 평균
+  avg4w: number; // 4주 평균
+  diff1w: number; // 1주 평균 대비 차이 (절대값)
+  diff2w: number; // 2주 평균 대비 차이 (절대값)
+  diff4w: number; // 4주 평균 대비 차이 (절대값)
+  pct1w: number; // 1주 평균 대비 변동률 (%)
+  pct2w: number; // 2주 평균 대비 변동률 (%)
+  pct4w: number; // 4주 평균 대비 변동률 (%)
+  trend1w: TrendDirection; // 1주 대비 방향
+  trend2w: TrendDirection; // 2주 대비 방향
+  trend4w: TrendDirection; // 4주 대비 방향
+  strength: TrendStrength; // 트렌드 강도
+  history: number[]; // 최근 28일 환율 (스파크라인용)
+  signal: '유리' | '불리' | '보통'; // 환전 시그널
+}
+
+// 통화별 트렌드 맵
+export type ExchangeRateTrendMap = Record<CurrencyCode, RateTrend>;
+
+// 히스토리 데이터 포인트
+export interface RateHistoryPoint {
+  date: string;
+  rate: number;
+}
