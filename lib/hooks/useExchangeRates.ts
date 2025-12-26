@@ -7,7 +7,6 @@ import {
   type CurrencyCode,
   type ExchangeRateMap,
   type ExchangeRateTrendMap,
-  type RateTrend,
   type TrendDirection,
   type TrendStrength,
 } from '@/lib/types/exchange-rate';

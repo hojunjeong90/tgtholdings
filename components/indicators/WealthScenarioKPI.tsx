@@ -1,9 +1,6 @@
 'use client';
 
 import {
-  TrendingUp,
-  TrendingDown,
-  Minus,
   DollarSign,
   Droplets,
   Gauge,

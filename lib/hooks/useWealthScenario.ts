@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 import { createClient } from '@/lib/supabase/browser';
 import {
   SCENARIO_INDICATORS,
-  STEP_ORDER,
   type IndicatorId,
   type ScenarioTrendData,
   type ScenarioKPIData,
@@ -214,7 +213,6 @@ function calculateKPIData(
   indicators: Partial<Record<IndicatorId, ScenarioTrendData>>
 ): ScenarioKPIData {
   // 금리 국면 판단
-  const fedRate = indicators.fed_rate?.current ?? 0;
   const fedRateChange = indicators.fed_rate?.change3m ?? 0;
   const policyStance: ScenarioKPIData['policyStance'] =
     fedRateChange > 0.25 ? '긴축' : fedRateChange < -0.25 ? '완화' : '중립';

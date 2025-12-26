@@ -41,9 +41,13 @@ function AssetContent() {
   // URL 파라미터 변경 감지
   useEffect(() => {
     if (tickerFromUrl && tickerFromUrl !== searchTicker) {
-      setInputTicker(tickerFromUrl);
-      setSearchTicker(tickerFromUrl);
+      // requestAnimationFrame으로 다음 프레임에서 상태 업데이트
+      requestAnimationFrame(() => {
+        setInputTicker(tickerFromUrl);
+        setSearchTicker(tickerFromUrl);
+      });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tickerFromUrl]);
 
   const { data, isLoading, error, refetch } = useStockPricesByPeriod(

@@ -12,10 +12,12 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Hydration 완료 후 mounted 상태 업데이트 (next-themes 패턴)
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

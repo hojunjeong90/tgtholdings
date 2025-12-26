@@ -13,7 +13,6 @@ const navItems = [
   { href: '/', label: '홈' },
   { href: '/indicators', label: '지표' },
   { href: '/tools', label: '도구' },
-  { href: '/components', label: 'UI' },
   { href: '/feed', label: '피드' },
 ];
 

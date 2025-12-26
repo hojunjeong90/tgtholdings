@@ -2,7 +2,7 @@
 
 import { ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import type { ScenarioStep, StepConfig } from '@/lib/types/wealth-scenario';
+import type { ScenarioStep } from '@/lib/types/wealth-scenario';
 import { STEP_CONFIG, STEP_ORDER } from '@/lib/types/wealth-scenario';
 
 interface WealthScenarioSectionProps {

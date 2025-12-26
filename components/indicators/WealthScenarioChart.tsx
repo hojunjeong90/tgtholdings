@@ -33,15 +33,16 @@ export function WealthScenarioChart({
   const stepConfig = STEP_CONFIG[indicator.step];
 
   // 차트 데이터 변환
+  const history = data?.history;
   const chartData = useMemo(() => {
-    if (!data?.history || data.history.length === 0) {
-      // 더미 데이터 (로딩/빈 상태용)
+    if (!history || history.length === 0) {
+      // 더미 데이터 (로딩/빈 상태용) - 고정된 패턴
       return Array(30)
         .fill(0)
-        .map((_, i) => ({ value: 50 + Math.random() * 10 }));
+        .map((_, i) => ({ value: 50 + (i % 5) * 2 }));
     }
-    return data.history.map((point) => ({ value: point.value }));
-  }, [data?.history]);
+    return history.map((point) => ({ value: point.value }));
+  }, [history]);
 
   // Y축 도메인 계산
   const domain = useMemo(() => {
