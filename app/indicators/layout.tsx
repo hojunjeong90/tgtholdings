@@ -1,7 +1,17 @@
+import type { Metadata } from 'next';
 import {
   IndicatorsSidebar,
   MobileIndicatorsSidebar,
 } from '@/components/indicators/IndicatorsSidebar';
+
+export const metadata: Metadata = {
+  title: '경제 지표',
+  description: '글로벌 통화 지표, 금리, 유동성 등 주요 경제 지표를 실시간으로 분석합니다.',
+  openGraph: {
+    title: '경제 지표 | TGT Holdings',
+    description: '글로벌 통화 지표, 금리, 유동성 등 주요 경제 지표를 실시간으로 분석합니다.',
+  },
+};
 
 export default function IndicatorsLayout({
   children,

@@ -1,6 +1,16 @@
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { KeyStatisticsTable } from '@/components/indicators/KeyStatisticsTable';
 import { Card, CardContent } from '@/components/ui/card';
+
+export const metadata: Metadata = {
+  title: '100대 통계지표',
+  description: '한국은행이 발표하는 100대 주요 경제 통계지표를 실시간으로 제공합니다.',
+  openGraph: {
+    title: '100대 통계지표 | TGT Holdings',
+    description: '한국은행이 발표하는 100대 주요 경제 통계지표를 실시간으로 제공합니다.',
+  },
+};
 
 function TableSkeleton() {
   return (

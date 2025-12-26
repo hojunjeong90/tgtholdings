@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { MonetaryIndicatorChart } from '@/components/indicators/MonetaryIndicatorChart';
 import {
@@ -8,6 +9,15 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { INDICATOR_INFO } from '@/lib/types/monetary-indicators';
+
+export const metadata: Metadata = {
+  title: '통화 지표 비교',
+  description: '한국, 미국, 일본의 통화유동속도, 통화승수, 금리를 비교 분석합니다.',
+  openGraph: {
+    title: '통화 지표 비교 | TGT Holdings',
+    description: '한국, 미국, 일본의 통화유동속도, 통화승수, 금리를 비교 분석합니다.',
+  },
+};
 
 function ChartSkeleton() {
   return (

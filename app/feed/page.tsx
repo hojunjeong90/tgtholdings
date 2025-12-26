@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Rss } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: '피드',
+  description: '글로벌 금융 시장 뉴스와 분석을 실시간으로 제공합니다.',
+  openGraph: {
+    title: '피드 | TGT Holdings',
+    description: '글로벌 금융 시장 뉴스와 분석을 실시간으로 제공합니다.',
+  },
+};
 
 export default function FeedPage() {
   return (
