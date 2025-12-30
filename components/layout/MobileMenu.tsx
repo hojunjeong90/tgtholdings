@@ -5,13 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavLink } from './NavLink';
 import { cn } from '@/lib/utils';
-
-const navItems = [
-  { href: '/', label: '홈' },
-  { href: '/indicators', label: '지표' },
-  { href: '/tools', label: '도구' },
-  { href: '/feed', label: '피드' },
-];
+import { navItems } from '@/lib/constants/navigation';
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
