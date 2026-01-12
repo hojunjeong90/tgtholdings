@@ -24,8 +24,7 @@
         "@playwright/mcp@latest"
       ]
     },
-    "Context7": {
-      "type": "stdio",
+    "context7": {
       "command": "npx",
       "args": [
         "-y",
