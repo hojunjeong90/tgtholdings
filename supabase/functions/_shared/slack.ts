@@ -4,7 +4,7 @@
  */
 
 export interface SlackNotification {
-  /** 프로젝트 이름 (예: "TGT Holdings") */
+  /** 프로젝트 이름 (예: "TGT Quant") */
   project: string;
   /** 주제 - 처리한 기능 (예: "환율 업데이트") */
   subject: string;
@@ -73,7 +73,7 @@ export async function sendSlackError(
   error: Error | string
 ): Promise<boolean> {
   return sendSlackNotification({
-    project: "TGT Holdings",
+    project: "TGT Quant",
     subject: "에러 발생",
     content: [
       `함수: ${functionName}`,
@@ -92,7 +92,7 @@ export async function sendSlackSuccess(
   link?: string
 ): Promise<boolean> {
   return sendSlackNotification({
-    project: "TGT Holdings",
+    project: "TGT Quant",
     subject,
     content,
     link,

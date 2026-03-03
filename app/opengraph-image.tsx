@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'TGT Holdings - 글로벌 투자 인텔리전스 플랫폼';
+export const alt = 'TGT Quant — Systematic Intelligence. Compounded.';
 export const size = {
   width: 1200,
   height: 630,
@@ -20,7 +20,7 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)',
+          background: 'linear-gradient(135deg, #030712 0%, #0f172a 50%, #0c1a2e 100%)',
           fontFamily: 'sans-serif',
         }}
       >
@@ -34,16 +34,18 @@ export default async function Image() {
         >
           <div
             style={{
-              width: 120,
-              height: 120,
-              background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
-              borderRadius: 24,
+              width: 96,
+              height: 96,
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: 16,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: 56,
+              fontSize: 36,
               fontWeight: 'bold',
               color: 'white',
+              letterSpacing: '-0.02em',
             }}
           >
             TGT
@@ -55,37 +57,39 @@ export default async function Image() {
             fontWeight: 'bold',
             color: 'white',
             marginBottom: 16,
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.03em',
           }}
         >
-          TGT Holdings
+          TGT Quant
         </div>
         <div
           style={{
-            fontSize: 28,
-            color: 'rgba(255, 255, 255, 0.7)',
+            fontSize: 26,
+            color: 'rgba(255, 255, 255, 0.55)',
             textAlign: 'center',
-            maxWidth: 800,
+            maxWidth: 720,
+            lineHeight: 1.5,
           }}
         >
-          글로벌 통화 지표, 환율, 금리 및 투자 시그널을 실시간으로 분석
+          Systematic Intelligence. Compounded.
         </div>
         <div
           style={{
             display: 'flex',
-            gap: 24,
+            gap: 16,
             marginTop: 48,
           }}
         >
-          {['환율', '금리', '주식', '경제지표'].map((tag) => (
+          {['Quantitative Research', 'Systematic Trading', 'Risk Management', 'Global Markets'].map((tag) => (
             <div
               key={tag}
               style={{
-                background: 'rgba(255, 255, 255, 0.1)',
+                background: 'rgba(255, 255, 255, 0.07)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
                 borderRadius: 9999,
-                padding: '12px 24px',
-                fontSize: 20,
-                color: 'rgba(255, 255, 255, 0.8)',
+                padding: '10px 20px',
+                fontSize: 16,
+                color: 'rgba(255, 255, 255, 0.6)',
               }}
             >
               {tag}

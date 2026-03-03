@@ -22,7 +22,7 @@ export function MobileMenu() {
         variant="ghost"
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? '메뉴 닫기' : '메뉴 열기'}
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
@@ -51,7 +51,7 @@ export function MobileMenu() {
                 <NavLink
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-base"
+                  className="block py-3 text-base"
                 >
                   {item.label}
                 </NavLink>

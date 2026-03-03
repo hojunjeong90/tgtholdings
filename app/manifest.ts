@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'TGT Holdings',
+    name: 'TGT Quant',
     short_name: 'TGT',
     description: '글로벌 통화 지표, 환율, 금리 및 투자 시그널을 실시간으로 분석하는 투자 인텔리전스 플랫폼',
     start_url: '/',

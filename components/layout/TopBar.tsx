@@ -27,7 +27,7 @@ export function TopBar() {
 
           {/* Logo */}
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">TGT Holdings</span>
+            <span className="font-bold">TGT Quant</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -49,7 +49,7 @@ export function TopBar() {
             onClick={() => setSearchOpen(true)}
           >
             <Search className="h-4 w-4" />
-            <span>검색</span>
+            <span>Search</span>
             <kbd className="pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 hidden sm:inline-flex">
               /
             </kbd>
@@ -61,7 +61,7 @@ export function TopBar() {
             size="icon"
             className="md:hidden"
             onClick={() => setSearchOpen(true)}
-            aria-label="검색"
+            aria-label="Search"
           >
             <Search className="h-5 w-5" />
           </Button>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: '마켓',
   description: '암호화폐 실시간 가격, 김치프리미엄, 펀딩비 등 시장 데이터를 제공합니다.',
   openGraph: {
-    title: '마켓 | TGT Holdings',
+    title: '마켓 | TGT Quant',
     description: '암호화폐 실시간 가격, 김치프리미엄, 펀딩비 등 시장 데이터를 제공합니다.',
   },
 };
