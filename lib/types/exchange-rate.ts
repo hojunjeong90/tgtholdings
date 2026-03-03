@@ -2,6 +2,9 @@
  * 환율 관련 TypeScript 타입 정의
  */
 
+// 트렌드 방향
+export type TrendDirection = 'up' | 'down' | 'neutral';
+
 // 지원 통화 코드 (12개)
 export type CurrencyCode =
   | 'KRW'
