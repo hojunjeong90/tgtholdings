@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://tgtquant.vercel.app';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://tgtquant.com';
 const SITE_NAME = 'TGT Quant';
 const SITE_DESCRIPTION = 'A quantitative investment firm building systematic strategies across global asset classes.';
 
