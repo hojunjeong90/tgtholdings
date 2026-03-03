@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.playwright-mcp/
+yarn.lock
+
+# Claude Code local files (skills, memory — not for repo)
+.claude/
