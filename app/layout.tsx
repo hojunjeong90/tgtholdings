@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Figtree } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import { TopBar } from "@/components/layout/TopBar";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
@@ -78,10 +78,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
-  ],
+  themeColor: '#030712',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -93,12 +90,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={figtree.variable} suppressHydrationWarning>
+    <html lang="en" className={`${figtree.variable} dark`} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <TopBar />
+          <SiteHeader />
           <main>{children}</main>
         </Providers>
       </body>

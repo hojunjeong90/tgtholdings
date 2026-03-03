@@ -1,4 +1,7 @@
-export const metadata = { title: 'How We Work' };
+export const metadata = {
+  title: 'How We Work',
+  description: 'A step-by-step look at how TGT Quant builds and deploys quantitative investment strategies — from data acquisition and signal research to live execution and continuous risk monitoring.',
+};
 
 const steps = [
   {

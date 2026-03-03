@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
-export const metadata = { title: 'Who We Are' };
+export const metadata = {
+  title: 'Who We Are',
+  description: 'TGT Quant is a quantitative investment firm driven by intellectual honesty, structural thinking, and long-horizon discipline. We build systematic strategies grounded in evidence, not opinion.',
+};
 
 const values = [
   {

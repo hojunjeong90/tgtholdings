@@ -1,4 +1,7 @@
-export const metadata = { title: 'Ideas' };
+export const metadata = {
+  title: 'Ideas',
+  description: 'Research notes, market observations, and long-form thinking on quantitative finance, macro structure, and the mechanics of systematic investing from TGT Quant.',
+};
 
 const categories = ['Macro', 'Signals', 'Infrastructure', 'Risk', 'Research'];
 

@@ -1,4 +1,7 @@
-export const metadata = { title: 'Contact' };
+export const metadata = {
+  title: 'Contact',
+  description: 'Get in touch with TGT Quant for partnerships, press inquiries, career opportunities, and research collaborations.',
+};
 
 const channels = [
   {

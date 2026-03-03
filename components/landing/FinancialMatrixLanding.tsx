@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback, useState } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 
 const MATRIX_CHARS = '0123456789.%+-×=<>$¥€£₩₿ΣΔ∂∫√∞≈±μσαβφρλπθΩΨΦBTCETHRSIGDPCPIVIXSMAΓΛΞ';
@@ -500,7 +500,6 @@ function getParticles(idx: number, t: number, st: ShapeState): Particle[] {
 export function FinancialMatrixLanding() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const startAnimation = useCallback((canvas: HTMLCanvasElement) => {
     const ctx = canvas.getContext('2d');
@@ -718,19 +717,10 @@ export function FinancialMatrixLanding() {
     <div className="relative min-h-screen overflow-hidden" style={{ background: '#030712' }}>
       <style>{`
         .fml-grad { background: linear-gradient(130deg,#4ade80 0%,#22d3ee 55%,#818cf8 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .fml-nav { color:rgba(226,232,240,0.55); transition:color .2s; }
-        .fml-nav:hover { color:#e2e8f0; }
-        .fml-gbtn { background:rgba(74,222,128,.10); border:1px solid rgba(74,222,128,.38); color:#4ade80; transition:all .2s; }
-        .fml-gbtn:hover { background:rgba(74,222,128,.22); border-color:rgba(74,222,128,.65); }
         .fml-cta { background:linear-gradient(135deg,#22c55e,#16a34a); color:#fff; box-shadow:0 0 28px rgba(34,197,94,.30); transition:box-shadow .2s,transform .2s; }
         .fml-cta:hover { box-shadow:0 0 44px rgba(34,197,94,.54); transform:translateY(-1px); }
         .fml-obtn { border:1px solid rgba(226,232,240,.14); color:rgba(226,232,240,.72); background:rgba(226,232,240,.04); transition:all .2s; }
         .fml-obtn:hover { background:rgba(226,232,240,.09); border-color:rgba(226,232,240,.28); color:#e2e8f0; }
-        .fml-mmenu { position:fixed; inset:0; top:0; z-index:60; background:#030712; display:flex; flex-direction:column; padding:1.25rem 1.5rem; }
-        .fml-mmenu-link { color:rgba(226,232,240,.75); font-size:1.25rem; font-weight:500; padding:0.875rem 0; border-bottom:1px solid rgba(226,232,240,.07); transition:color .2s; }
-        .fml-mmenu-link:hover { color:#e2e8f0; }
-        .fml-hamburger { display:flex; flex-direction:column; justify-content:center; gap:5px; width:36px; height:36px; cursor:pointer; }
-        .fml-hamburger span { display:block; width:22px; height:1.5px; background:rgba(226,232,240,.8); transition:all .25s; }
       `}</style>
 
       <canvas ref={canvasRef} className="absolute inset-0 z-0" aria-hidden />
@@ -743,58 +733,7 @@ export function FinancialMatrixLanding() {
         background: 'rgba(3,7,18,0.55)',
       }} />
 
-      <nav className="relative z-20 flex items-center justify-between px-5 md:px-8 py-5">
-        <Link href="/" className="select-none">
-          <span className="text-white font-bold text-lg tracking-tight">
-            TGT <span style={{ color: '#4ade80' }}>Quant</span>
-          </span>
-        </Link>
-        <div className="hidden md:flex items-center gap-8">
-          {[['How We Work', '/how-we-work'], ['Who We Are', '/who-we-are'], ['Ideas', '/ideas'], ['Careers', '/careers']].map(([l, h]) => (
-            <Link key={h} href={h} className="fml-nav text-sm font-medium">{l}</Link>
-          ))}
-        </div>
-        <Link href="/contact" className="fml-gbtn hidden md:flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold">
-          Contact
-        </Link>
-        {/* Mobile hamburger */}
-        <button
-          className="fml-hamburger md:hidden"
-          onClick={() => setMobileMenuOpen(true)}
-          aria-label="Open menu"
-        >
-          <span /><span /><span />
-        </button>
-      </nav>
-
-      {/* Mobile full-screen menu */}
-      {mobileMenuOpen && (
-        <div className="fml-mmenu">
-          <div className="flex items-center justify-between mb-10">
-            <span className="text-white font-bold text-lg tracking-tight">
-              TGT <span style={{ color: '#4ade80' }}>Quant</span>
-            </span>
-            <button
-              className="fml-hamburger"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-label="Close menu"
-            >
-              <span style={{ transform: 'rotate(45deg) translate(4px, 4px)' }} />
-              <span style={{ opacity: 0 }} />
-              <span style={{ transform: 'rotate(-45deg) translate(4px, -4px)' }} />
-            </button>
-          </div>
-          <nav className="flex flex-col flex-1">
-            {[['How We Work', '/how-we-work'], ['Who We Are', '/who-we-are'], ['Ideas', '/ideas'], ['Careers', '/careers'], ['Contact', '/contact']].map(([l, h]) => (
-              <Link key={h} href={h} className="fml-mmenu-link" onClick={() => setMobileMenuOpen(false)}>
-                {l}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
-
-      <div className="relative z-10 flex min-h-[calc(100vh-76px)] items-center">
+      <div className="relative z-10 flex min-h-[calc(100vh-68px)] items-center">
         <div className="px-5 sm:px-8 md:px-16 w-full max-w-[560px]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-8"
             style={{ border: '1px solid rgba(74,222,128,.28)', background: 'rgba(74,222,128,.07)', color: '#4ade80' }}>

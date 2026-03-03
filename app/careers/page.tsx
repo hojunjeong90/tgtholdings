@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
-export const metadata = { title: 'Careers' };
+export const metadata = {
+  title: 'Careers',
+  description: 'Join TGT Quant. We look for researchers and engineers with deep technical foundations, systems-level intuition, and a commitment to evidence over ego.',
+};
 
 const traits = [
   {
