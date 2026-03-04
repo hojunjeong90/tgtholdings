@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "katex/dist/katex.min.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -123,4 +124,91 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Blog prose typography */
+.prose-tgt {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--foreground);
+}
+.prose-tgt h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.prose-tgt h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-tgt p {
+  margin-bottom: 1.25rem;
+}
+.prose-tgt a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-tgt strong {
+  font-weight: 600;
+}
+.prose-tgt ul,
+.prose-tgt ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.prose-tgt ul {
+  list-style: disc;
+}
+.prose-tgt ol {
+  list-style: decimal;
+}
+.prose-tgt li {
+  margin-bottom: 0.375rem;
+}
+.prose-tgt blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted-foreground);
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+.prose-tgt code {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.875em;
+  background: var(--muted);
+  padding: 0.15em 0.35em;
+  border-radius: 0.25rem;
+}
+.prose-tgt pre {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.prose-tgt pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+.prose-tgt hr {
+  border-color: var(--border);
+  margin: 2rem 0;
+}
+/* KaTeX display math spacing */
+.prose-tgt .katex-display {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+.prose-tgt img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
 }
