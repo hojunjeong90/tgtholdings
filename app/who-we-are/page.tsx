@@ -2,8 +2,74 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Who We Are',
-  description: 'TGT Quant is a quantitative investment firm driven by intellectual honesty, structural thinking, and long-horizon discipline. We build systematic strategies grounded in evidence, not opinion.',
+  description: 'TGT Holdings is an AI-native proprietary trading firm and private office. We deploy autonomous systems across global markets — no external capital, no discretionary overrides.',
 };
+
+const profile = [
+  {
+    label: 'Capital',
+    value: 'Proprietary Only',
+    detail: 'No external investors. No outside mandates.',
+  },
+  {
+    label: 'Markets',
+    value: 'Equities · Futures · FX · Digital Assets',
+    detail: 'Multi-asset systematic exposure.',
+  },
+  {
+    label: 'Coverage',
+    value: 'US · EU · APAC · KR',
+    detail: 'Global reach, region-specific signal sets.',
+  },
+  {
+    label: 'Decisions',
+    value: 'Fully Autonomous',
+    detail: 'AI-driven. No discretionary overrides in live trading.',
+  },
+  {
+    label: 'Operation',
+    value: '24 / 7 Continuous',
+    detail: 'Systems run without market hours.',
+  },
+  {
+    label: 'Research',
+    value: 'Always On',
+    detail: 'Hypothesis testing and model iteration never stop.',
+  },
+];
+
+const systems = [
+  {
+    id: 'AE',
+    name: 'Alpha Engine',
+    description: 'Discovers and validates statistical edges across markets and timeframes. Runs continuous hypothesis testing against live and historical data.',
+    primary: true,
+  },
+  {
+    id: 'RC',
+    name: 'Risk Controller',
+    description: 'Enforces drawdown limits, exposure caps, and correlation constraints in real time. Operates independently of the alpha layer.',
+    primary: true,
+  },
+  {
+    id: 'XA',
+    name: 'Execution Agent',
+    description: 'Optimizes order routing and fill quality. Minimizes market impact and measures transaction costs against benchmark.',
+    primary: true,
+  },
+  {
+    id: 'RP',
+    name: 'Research Pipeline',
+    description: 'Ingests alternative and structured data, runs feature engineering, and feeds model training cycles. Outputs feed back into the Alpha Engine.',
+    primary: false,
+  },
+  {
+    id: 'MS',
+    name: 'Monitoring Stack',
+    description: '24/7 anomaly detection across system health, signal drift, and execution quality. Triggers circuit breakers automatically when thresholds are breached.',
+    primary: false,
+  },
+];
 
 const values = [
   {
@@ -20,74 +86,7 @@ const values = [
   },
   {
     title: 'Closed Culture',
-    body: 'We share little externally and debate intensely internally. The quality of internal discourse is the foundation of every decision we make.',
-  },
-];
-
-// core: true = highlighted as founding/core member
-const team = [
-  {
-    name: 'Peter Jeong',
-    initials: 'PJ',
-    role: 'Quant Researcher',
-    focus: 'Alpha discovery & strategy design.',
-    core: true,
-  },
-  {
-    name: 'Mira Chen',
-    initials: 'MC',
-    role: 'ML Signal Engineer',
-    focus: 'Predictive modeling & feature research.',
-    core: true,
-  },
-  {
-    name: 'Marcus Webb',
-    initials: 'MW',
-    role: 'Risk Manager',
-    focus: 'Drawdown controls & model validation.',
-    core: true,
-  },
-  {
-    name: 'Kai Nakamura',
-    initials: 'KN',
-    role: 'Execution Specialist',
-    focus: 'Fill quality & transaction cost analysis.',
-    core: false,
-  },
-  {
-    name: 'Sol Park',
-    initials: 'SP',
-    role: 'Data Engineer',
-    focus: 'Pipeline integrity & market data.',
-    core: false,
-  },
-  {
-    name: 'Lena Volkov',
-    initials: 'LV',
-    role: 'Quant DevOps',
-    focus: 'Production systems & reproducibility.',
-    core: false,
-  },
-  {
-    name: 'Yuna Kim',
-    initials: 'YK',
-    role: 'Portfolio Manager',
-    focus: 'Capital allocation & position sizing.',
-    core: false,
-  },
-  {
-    name: 'Adrian Cross',
-    initials: 'AC',
-    role: 'Middle Office',
-    focus: 'Settlement, margin & ops reporting.',
-    core: false,
-  },
-  {
-    name: 'Priya Sharma',
-    initials: 'PS',
-    role: 'Compliance',
-    focus: 'Regulatory monitoring & audit.',
-    core: false,
+    body: 'We share little externally and iterate intensely internally. The quality of our systems is the foundation of every outcome we produce.',
   },
 ];
 
@@ -104,9 +103,9 @@ export default function WhoWeAre() {
             Who We Are
           </h1>
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            TGT Quant is a quantitative investment firm structured as a private office.
-            We allocate proprietary capital — no external investors, no outside mandates —
-            through systematic strategies across global asset classes.
+            TGT Holdings is an AI-native proprietary trading firm structured as a private office.
+            We deploy autonomous systems across global markets — no external capital,
+            no discretionary overrides, no opinions.
           </p>
         </div>
       </section>
@@ -132,73 +131,90 @@ export default function WhoWeAre() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Firm Profile */}
       <section className="py-16 md:py-24 lg:py-28 border-b border-border/50">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
           <div className="flex items-baseline justify-between mb-8 md:mb-12">
-            <h2 className="text-xl md:text-2xl font-bold">The Team</h2>
+            <h2 className="text-xl md:text-2xl font-bold">Firm Profile</h2>
             <span className="text-xs font-mono text-muted-foreground/50 tracking-widest uppercase">
-              {team.length} agents · always on
+              Private Office · Prop Capital
             </span>
           </div>
-
-          {/* 2×5 grid: 2 col mobile → 3 col tablet → 5 col desktop */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-            {team.map((member) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            {profile.map((item) => (
               <div
-                key={member.name}
-                className={`relative rounded-xl border p-4 md:p-5 flex flex-col gap-3 transition-colors ${
-                  member.core
+                key={item.label}
+                className="rounded-xl border border-border/50 bg-muted/10 p-5 md:p-6 flex flex-col gap-2"
+              >
+                <p className="text-xs font-mono text-primary/70 uppercase tracking-widest">
+                  {item.label}
+                </p>
+                <p className="text-sm md:text-base font-semibold text-foreground leading-snug">
+                  {item.value}
+                </p>
+                <p className="text-xs text-muted-foreground/60 leading-relaxed">
+                  {item.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* System Architecture */}
+      <section className="py-16 md:py-24 lg:py-28 border-b border-border/50">
+        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <div className="flex items-baseline justify-between mb-8 md:mb-12">
+            <h2 className="text-xl md:text-2xl font-bold">System Architecture</h2>
+            <span className="text-xs font-mono text-muted-foreground/50 tracking-widest uppercase">
+              {systems.length} components · always running
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            {systems.map((sys) => (
+              <div
+                key={sys.id}
+                className={`relative rounded-xl border p-5 md:p-6 flex flex-col gap-3 transition-colors ${
+                  sys.primary
                     ? 'border-primary/30 bg-primary/5 hover:bg-primary/8'
                     : 'border-border/50 bg-muted/10 hover:bg-muted/20'
                 }`}
               >
-                {member.core && (
-                  <span className="absolute top-3 right-3 w-1.5 h-1.5 rounded-full bg-primary" />
+                {sys.primary && (
+                  <span className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-primary" />
                 )}
-                {/* Monogram */}
                 <div
                   className={`w-9 h-9 rounded-lg flex items-center justify-center text-xs font-mono font-semibold flex-shrink-0 ${
-                    member.core
+                    sys.primary
                       ? 'bg-primary/15 text-primary'
                       : 'bg-muted/40 text-muted-foreground'
                   }`}
                 >
-                  {member.initials}
+                  {sys.id}
                 </div>
-
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-foreground leading-tight truncate">
-                    {member.name}
-                  </p>
-                  <p className={`text-xs mt-0.5 font-mono truncate ${
-                    member.core ? 'text-primary/80' : 'text-muted-foreground/70'
-                  }`}>
-                    {member.role}
+                <div>
+                  <p className="text-sm font-semibold text-foreground leading-tight">
+                    {sys.name}
                   </p>
                 </div>
-
-                <p className="text-xs text-muted-foreground/60 leading-relaxed line-clamp-2">
-                  {member.focus}
+                <p className="text-xs text-muted-foreground/70 leading-relaxed">
+                  {sys.description}
                 </p>
               </div>
             ))}
 
-            {/* 10th slot — open seat */}
-            <div className="rounded-xl border border-dashed border-border/40 p-4 md:p-5 flex flex-col gap-3 items-center justify-center text-center opacity-50">
+            {/* Expanding slot */}
+            <div className="rounded-xl border border-dashed border-border/40 p-5 md:p-6 flex flex-col gap-3 items-center justify-center text-center opacity-40">
               <div className="w-9 h-9 rounded-lg border border-dashed border-border/60 flex items-center justify-center text-lg text-muted-foreground/30">
                 +
               </div>
-              <div>
-                <p className="text-xs font-mono text-muted-foreground/50 leading-snug">
-                  Your seat.<br />Always open.
-                </p>
-              </div>
+              <p className="text-xs font-mono text-muted-foreground/50 leading-snug">
+                Next module<br />in development
+              </p>
             </div>
           </div>
-
           <p className="mt-6 text-xs font-mono text-muted-foreground/40">
-            ● Core member
+            ● Core decision layer
           </p>
         </div>
       </section>
@@ -218,14 +234,14 @@ export default function WhoWeAre() {
         </div>
       </section>
 
-      {/* Join CTA */}
+      {/* CTA */}
       <section className="py-16 md:py-24 lg:py-28">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div>
-              <h2 className="text-xl md:text-2xl font-bold mb-2">Think you belong here?</h2>
+              <h2 className="text-xl md:text-2xl font-bold mb-2">Build the infrastructure with us.</h2>
               <p className="text-sm md:text-base text-muted-foreground max-w-lg leading-relaxed">
-                We&apos;re always looking for people who think rigorously and build things carefully.
+                We look for engineers and researchers who build things that run without supervision.
               </p>
             </div>
             <Link
