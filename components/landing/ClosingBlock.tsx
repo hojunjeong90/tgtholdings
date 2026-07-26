@@ -10,26 +10,26 @@ export function ClosingBlock() {
 
   return (
     <section ref={ref} className="py-20 md:py-32 lg:py-40 border-t border-border/30">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+      <div className="content-shell">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.12] mb-10 md:mb-14">
+          <h2 className="font-display text-huge font-semibold tracking-[-0.06em] leading-[0.92] mb-10 md:mb-14">
             Quietly systematic.<br />
             Relentlessly empirical.<br />
             <span className="text-muted-foreground">Long-horizon focused.</span>
           </h2>
 
-          <p className="text-xs font-mono text-muted-foreground/50 tracking-[0.18em] md:tracking-[0.22em] uppercase mb-10 md:mb-14">
+          <p className="label-mono text-muted-foreground/50 mb-10 md:mb-14">
             We trade proprietary capital only.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Link
-              href="/how-we-work"
+              href="/what-we-do"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-md bg-foreground text-background text-sm font-semibold hover:opacity-85 transition-opacity"
             >
               Research Philosophy
@@ -38,7 +38,7 @@ export function ClosingBlock() {
               </svg>
             </Link>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-md border border-border text-sm font-semibold text-foreground hover:bg-muted/50 transition-colors"
             >
               Get in Touch

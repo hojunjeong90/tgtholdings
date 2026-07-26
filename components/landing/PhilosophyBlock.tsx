@@ -27,17 +27,17 @@ export function PhilosophyBlock() {
 
   return (
     <section ref={ref} className="py-16 md:py-24 lg:py-32 border-t border-border/30">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+      <div className="content-shell">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="mb-10 md:mb-14"
         >
-          <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6 md:mb-10">
+          <p className="label-mono text-muted-foreground mb-6 md:mb-10">
             Philosophy
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-tight">
+          <h2 className="font-display text-huge font-semibold tracking-[-0.05em] leading-[0.98]">
             Research over opinion.
           </h2>
         </motion.div>
@@ -52,7 +52,7 @@ export function PhilosophyBlock() {
               className="py-6 md:py-8 grid grid-cols-[2rem_1fr] md:grid-cols-[2.5rem_1fr_2fr] gap-x-4 md:gap-x-6 gap-y-2 items-start"
             >
               <span className="text-xs font-mono text-muted-foreground/40 pt-0.5">{p.label}</span>
-              <h3 className="text-sm md:text-base font-medium text-foreground">{p.title}</h3>
+              <h3 className="font-display text-lg md:text-xl font-semibold tracking-[-0.025em] text-foreground">{p.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed col-start-2 md:col-start-auto mt-1 md:mt-0">{p.body}</p>
             </motion.div>
           ))}

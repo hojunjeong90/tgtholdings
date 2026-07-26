@@ -3,13 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-const NAV_LINKS: [string, string][] = [
-  ['How We Work', '/how-we-work'],
-  ['Who We Are', '/who-we-are'],
-  ['Ideas', '/ideas'],
-  ['Careers', '/careers'],
-];
+import { navItems } from '@/lib/constants/navigation';
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -24,8 +18,10 @@ export function SiteHeader() {
         .sh-mmenu { position:fixed; inset:0; z-index:60; background:#030712; display:flex; flex-direction:column; padding:1.25rem 1.5rem; }
         .sh-mmenu-link { color:rgba(226,232,240,.75); font-size:1.25rem; font-weight:500; padding:0.875rem 0; border-bottom:1px solid rgba(226,232,240,.07); transition:color .2s; }
         .sh-mmenu-link:hover { color:#e2e8f0; }
-        .sh-hamburger { display:flex; flex-direction:column; justify-content:center; gap:5px; width:36px; height:36px; cursor:pointer; background:none; border:none; padding:0; }
+        .sh-hamburger { display:none; flex-direction:column; justify-content:center; gap:5px; width:36px; height:36px; cursor:pointer; background:none; border:none; padding:0; }
+        .sh-mmenu-close { display:flex; }
         .sh-hamburger span { display:block; width:22px; height:1.5px; background:rgba(226,232,240,.8); transition:all .25s; }
+        @media (max-width:767px) { .sh-hamburger { display:flex; } }
       `}</style>
 
       <header
@@ -43,12 +39,12 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map(([label, href]) => (
+        <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-4 lg:gap-6">
+          {navItems.map(({ label, href }) => (
             <Link
               key={href}
               href={href}
-              className={`sh-nav text-sm font-medium${pathname === href ? ' sh-nav-active' : ''}`}
+              className={`sh-nav text-[13px] font-medium${pathname === href ? ' sh-nav-active' : ''}`}
             >
               {label}
             </Link>
@@ -71,7 +67,7 @@ export function SiteHeader() {
               TGT <span style={{ color: '#4ade80' }}>Quant</span>
             </span>
             <button
-              className="sh-hamburger"
+              className="sh-hamburger sh-mmenu-close"
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
             >
@@ -80,8 +76,8 @@ export function SiteHeader() {
               <span style={{ transform: 'rotate(-45deg) translate(4px, -4px)' }} />
             </button>
           </div>
-          <nav className="flex flex-col flex-1">
-            {NAV_LINKS.map(([label, href]) => (
+          <nav aria-label="Mobile navigation" className="flex flex-col flex-1">
+            {navItems.map(({ label, href }) => (
               <Link
                 key={href}
                 href={href}

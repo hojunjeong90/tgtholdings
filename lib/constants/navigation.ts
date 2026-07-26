@@ -4,9 +4,10 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { href: '/how-we-work', label: 'How We Work' },
-  { href: '/who-we-are', label: 'Who We Are' },
-  { href: '/ideas', label: 'Ideas' },
-  { href: '/careers', label: 'Careers' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/research', label: 'Research' },
+  { href: '/about-us', label: 'About Us' },
+  { href: '/what-we-do', label: 'What We Do' },
+  { href: '/career', label: 'Career' },
+  { href: '/contact-us', label: 'Contact Us' },
 ];

@@ -17,7 +17,7 @@ export function CapabilitySnapshot() {
 
   return (
     <section ref={ref} className="py-16 md:py-24 lg:py-32 border-t border-border/30">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+      <div className="content-shell">
         <div className="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -25,10 +25,10 @@ export function CapabilitySnapshot() {
             transition={{ duration: 0.6 }}
             className="md:sticky md:top-24"
           >
-            <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4 md:mb-6">
+            <p className="label-mono text-muted-foreground mb-4 md:mb-6">
               Capabilities
             </p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-light tracking-tight leading-snug">
+            <h2 className="font-display text-huge font-semibold tracking-[-0.05em] leading-[0.98]">
               What we<br />build.
             </h2>
           </motion.div>

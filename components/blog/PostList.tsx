@@ -20,7 +20,7 @@ export default function PostList({ posts }: { posts: BlogPost[] }) {
     <>
       {/* Filter bar */}
       <div className="border-b border-border/50">
-        <div className="container mx-auto px-6 md:px-12 max-w-5xl py-4 flex flex-wrap items-center gap-2 md:gap-3">
+        <div className="content-shell py-4 flex flex-wrap items-center gap-2 md:gap-3">
           <button
             onClick={() => setActive(null)}
             className={`text-xs font-mono uppercase tracking-widest px-3 py-2 rounded-md transition-colors ${
@@ -50,7 +50,7 @@ export default function PostList({ posts }: { posts: BlogPost[] }) {
       {/* Post list or empty state */}
       {filtered.length === 0 ? (
         <section className="py-24 md:py-32 lg:py-40">
-          <div className="container mx-auto px-6 md:px-12 max-w-5xl text-center">
+          <div className="content-shell text-center">
             <div className="inline-block font-mono text-4xl md:text-6xl mb-6 md:mb-8 text-border select-none">
               &empty;
             </div>
@@ -63,11 +63,11 @@ export default function PostList({ posts }: { posts: BlogPost[] }) {
         </section>
       ) : (
         <section className="py-8 md:py-12">
-          <div className="container mx-auto px-6 md:px-12 max-w-5xl divide-y divide-border/50">
+          <div className="content-shell divide-y divide-border/50">
             {filtered.map((post) => (
               <Link
                 key={post.slug}
-                href={`/ideas/${post.slug}`}
+                href={`/research/${post.slug}`}
                 className="block py-6 md:py-8 group"
               >
                 <div className="flex items-center gap-3 mb-2 text-xs font-mono uppercase tracking-widest text-muted-foreground">
@@ -75,7 +75,7 @@ export default function PostList({ posts }: { posts: BlogPost[] }) {
                   <span className="text-border">|</span>
                   <span>{formatDate(post.date)}</span>
                 </div>
-                <h2 className="text-xl md:text-2xl font-semibold tracking-tight mb-2 group-hover:text-primary transition-colors">
+                <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-[-0.04em] leading-[1.02] mb-2 group-hover:text-primary transition-colors">
                   {post.title}
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-3xl">

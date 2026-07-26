@@ -9,16 +9,16 @@ export function IdentityBlock() {
 
   return (
     <section ref={ref} className="py-16 md:py-24 lg:py-32 border-t border-border/30">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+      <div className="content-shell">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6 md:mb-10">
-            Who We Are
+          <p className="label-mono text-muted-foreground mb-6 md:mb-10">
+            About Us
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15] tracking-tight mb-8 md:mb-12">
+          <h2 className="font-display text-huge font-semibold leading-[0.98] tracking-[-0.05em] mb-8 md:mb-12">
             We are a quantitative<br />
             research firm.
           </h2>

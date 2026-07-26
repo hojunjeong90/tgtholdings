@@ -735,14 +735,14 @@ export function FinancialMatrixLanding() {
 
       <div className="relative z-10 flex min-h-[calc(100vh-68px)] items-center">
         <div className="px-5 sm:px-8 md:px-16 w-full max-w-[560px]">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-8"
+          <div className="label-mono inline-flex items-center gap-2 px-3 py-1 rounded-full mb-8"
             style={{ border: '1px solid rgba(74,222,128,.28)', background: 'rgba(74,222,128,.07)', color: '#4ade80' }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: '#4ade80', boxShadow: '0 0 6px #4ade80' }} />
             Quantitative Research &amp; Trading
           </div>
 
-          <h1 className="font-light leading-[1.1] tracking-tight mb-6"
-            style={{ fontSize: 'clamp(2.8rem,5.5vw,4.5rem)', color: '#f1f5f9' }}>
+          <h1 className="home-display mb-6"
+            style={{ color: '#f1f5f9' }}>
             Systematic Intelligence.<br />
             <span className="fml-grad">Compounded.</span>
           </h1>
@@ -752,7 +752,7 @@ export function FinancialMatrixLanding() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <Link href="/how-we-work" className="fml-cta flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold">
+            <Link href="/what-we-do" className="fml-cta flex items-center gap-2 px-6 py-3 rounded-md text-sm font-semibold">
               Research Philosophy
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

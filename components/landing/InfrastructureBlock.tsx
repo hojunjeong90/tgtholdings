@@ -28,17 +28,17 @@ export function InfrastructureBlock() {
 
   return (
     <section id="infrastructure" ref={ref} className="py-16 md:py-24 lg:py-32 border-t border-border/30">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+      <div className="content-shell">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="mb-10 md:mb-14"
         >
-          <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6 md:mb-10">
+          <p className="label-mono text-muted-foreground mb-6 md:mb-10">
             Infrastructure
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-tight mb-4 md:mb-5">
+          <h2 className="font-display text-huge font-semibold tracking-[-0.05em] leading-[0.98] mb-4 md:mb-5">
             Infrastructure<br />is the strategy.
           </h2>
           <p className="text-muted-foreground text-sm md:text-base max-w-lg leading-relaxed">
@@ -56,7 +56,7 @@ export function InfrastructureBlock() {
               transition={{ duration: 0.4, delay: 0.25 + i * 0.08 }}
               className="bg-background p-4 md:p-6"
             >
-              <p className="text-xs font-mono text-muted-foreground/50 mb-3 md:mb-4 uppercase tracking-widest">
+              <p className="label-mono text-muted-foreground/50 mb-3 md:mb-4">
                 {layer.label}
               </p>
               <ul className="space-y-2">
